@@ -1,6 +1,8 @@
 const fs = require('fs');
-const trie = {};
+const {twl06} = require('./twl06_array.js');
+console.log('dictionary', twl06.length);
 
+const trie = {};
 const arrayToTrie = (array) => {
 	array.forEach((word) => {
 		let node = trie;
@@ -36,29 +38,31 @@ const isInDictionary = (dict, word) => {
 	return response;
 }
 
-// let testArray = ['cat', 'car', 'cab', 'bat'];
-// arrayToTrie(testArray);
-// console.log('trie', trie);
+arrayToTrie(twl06);
 
-// console.log('isInDictionary for cat', isInDictionary(trie, 'cat'));
-// console.log('isInDictionary for ca', isInDictionary(trie, 'ca'));
-// console.log('isInDictionary for cay', isInDictionary(trie, 'cay'));
-// console.log('isInDictionary for catamount', isInDictionary(trie, 'catamount'));
+console.log('trie', trie);
 
-// fs.writeFile("./test.json", JSON.stringify(trie), function(err) {
-//     if(err) {
-//         return console.log(err);
-//     }
-//     console.log("The file was saved!");
-// }); 
+console.log('isInDictionary for cat', isInDictionary(trie, 'cat'));
+console.log('isInDictionary for cab', isInDictionary(trie, 'cab'));
+console.log('isInDictionary for cb', isInDictionary(trie, 'cb'));
+console.log('isInDictionary for ca', isInDictionary(trie, 'ca'));
+console.log('isInDictionary for cay', isInDictionary(trie, 'cay'));
+console.log('isInDictionary for catamount', isInDictionary(trie, 'catamount'));
+
+fs.writeFile("./twl06.json", JSON.stringify(trie), function(err) {
+    if(err) {
+        return console.log(err);
+    }
+    console.log("The file was saved!");
+}); 
 
 
-const testDict = require('./test.json');
-console.log(testDict);
+// const testDict = require('./twl06.json');
+// console.log(testDict);
 
-console.log('isInDictionary for cat', isInDictionary(testDict, 'cat'));
-console.log('isInDictionary for cab', isInDictionary(testDict, 'cab'));
-console.log('isInDictionary for cb', isInDictionary(testDict, 'cb'));
-console.log('isInDictionary for ca', isInDictionary(testDict, 'ca'));
-console.log('isInDictionary for cay', isInDictionary(testDict, 'cay'));
-console.log('isInDictionary for catamount', isInDictionary(testDict, 'catamount'));
+// console.log('isInDictionary for cat', isInDictionary(testDict, 'cat'));
+// console.log('isInDictionary for cab', isInDictionary(testDict, 'cab'));
+// console.log('isInDictionary for cb', isInDictionary(testDict, 'cb'));
+// console.log('isInDictionary for ca', isInDictionary(testDict, 'ca'));
+// console.log('isInDictionary for cay', isInDictionary(testDict, 'cay'));
+// console.log('isInDictionary for catamount', isInDictionary(testDict, 'catamount'));
