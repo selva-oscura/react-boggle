@@ -30,12 +30,12 @@ const isInDictionary = (dict, word) => {
 				}
 			}
 		}else{
-			console.log('exceeded')
 			return response;
 		}
 	}
 	return response;
 }
+
 let testArray = ['cat', 'car', 'cab', 'bat'];
 arrayToTrie(testArray);
 console.log('trie', trie);
@@ -45,10 +45,9 @@ console.log('isInDictionary for ca', isInDictionary(trie, 'ca'));
 console.log('isInDictionary for cay', isInDictionary(trie, 'cay'));
 console.log('isInDictionary for catamount', isInDictionary(trie, 'catamount'));
 
-fs.writeFile("./test.json", "Hey there!", function(err) {
+fs.writeFile("./test.json", JSON.stringify(trie), function(err) {
     if(err) {
         return console.log(err);
     }
-
     console.log("The file was saved!");
 }); 
