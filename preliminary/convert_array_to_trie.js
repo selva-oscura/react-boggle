@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const trie = {};
 const arrayToTrie = (array) => {
 	array.forEach((word) => {
@@ -42,3 +44,11 @@ console.log('isInDictionary for cat', isInDictionary(trie, 'cat'));
 console.log('isInDictionary for ca', isInDictionary(trie, 'ca'));
 console.log('isInDictionary for cay', isInDictionary(trie, 'cay'));
 console.log('isInDictionary for catamount', isInDictionary(trie, 'catamount'));
+
+fs.writeFile("./test.json", "Hey there!", function(err) {
+    if(err) {
+        return console.log(err);
+    }
+
+    console.log("The file was saved!");
+}); 
