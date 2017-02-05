@@ -1,6 +1,6 @@
 const fs = require('fs');
-
 const trie = {};
+
 const arrayToTrie = (array) => {
 	array.forEach((word) => {
 		let node = trie;
@@ -36,18 +36,29 @@ const isInDictionary = (dict, word) => {
 	return response;
 }
 
-let testArray = ['cat', 'car', 'cab', 'bat'];
-arrayToTrie(testArray);
-console.log('trie', trie);
+// let testArray = ['cat', 'car', 'cab', 'bat'];
+// arrayToTrie(testArray);
+// console.log('trie', trie);
 
-console.log('isInDictionary for cat', isInDictionary(trie, 'cat'));
-console.log('isInDictionary for ca', isInDictionary(trie, 'ca'));
-console.log('isInDictionary for cay', isInDictionary(trie, 'cay'));
-console.log('isInDictionary for catamount', isInDictionary(trie, 'catamount'));
+// console.log('isInDictionary for cat', isInDictionary(trie, 'cat'));
+// console.log('isInDictionary for ca', isInDictionary(trie, 'ca'));
+// console.log('isInDictionary for cay', isInDictionary(trie, 'cay'));
+// console.log('isInDictionary for catamount', isInDictionary(trie, 'catamount'));
 
-fs.writeFile("./test.json", JSON.stringify(trie), function(err) {
-    if(err) {
-        return console.log(err);
-    }
-    console.log("The file was saved!");
-}); 
+// fs.writeFile("./test.json", JSON.stringify(trie), function(err) {
+//     if(err) {
+//         return console.log(err);
+//     }
+//     console.log("The file was saved!");
+// }); 
+
+
+const testDict = require('./test.json');
+console.log(testDict);
+
+console.log('isInDictionary for cat', isInDictionary(testDict, 'cat'));
+console.log('isInDictionary for cab', isInDictionary(testDict, 'cab'));
+console.log('isInDictionary for cb', isInDictionary(testDict, 'cb'));
+console.log('isInDictionary for ca', isInDictionary(testDict, 'ca'));
+console.log('isInDictionary for cay', isInDictionary(testDict, 'cay'));
+console.log('isInDictionary for catamount', isInDictionary(testDict, 'catamount'));
