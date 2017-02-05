@@ -1,7 +1,22 @@
 {
   "name": "boggle",
   "version": "0.1.0",
-  "private": true,
+  "description": "React and Firebase-based Boggle-like app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selva-oscura/react-boggle.git"
+  },
+  "keywords": [
+    "React",
+    "Firebase",
+    "JavaScript",
+    "ES6"
+  ],
+  "author": "Carol  St. Louis",
+  "bugs": {
+    "url": "https://github.com/selva-oscura/react-boggle/issues"
+  },
+  "homepage": "https://github.com/selva-oscura/react-boggle#readme",
   "devDependencies": {
     "react-scripts": "0.8.5"
   },
